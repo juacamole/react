@@ -1,0 +1,7 @@
+#logo {
+    position: fixed;
+    width: 10%;
+    top: -4%;
+    left: 3%;
+    filter: drop-shadow(15px 0px 15px Black);
+}
