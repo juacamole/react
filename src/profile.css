@@ -1,0 +1,47 @@
+#profile-text {
+    position: absolute;
+    right: 100px;
+    top: 100px;
+    width: 700px;
+    height: 1000px;
+    border: #888888 solid 2px;
+    filter: drop-shadow(15px 0px 15px #888888);
+    border-radius: 1%;
+
+}
+
+
+.text {
+    text-align: justify;
+    font-size: 18px;
+    font-family: Georgia;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+#text0 {
+    margin-top: 20px;
+}
+
+#text1 {
+    margin-top: 40px;
+}
+
+#text2 {
+    margin-top: 40px;
+}
+
+
+#image-db5 {
+    width: 300px;
+    margin-right: 320px;
+}
+
+#image-quote-db5 {
+    position: absolute;
+    margin-top: 130px;
+    right: 150px;
+    font-size: 12px;
+    font-style: italic;
+    font-weight: bold;
+}

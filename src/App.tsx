@@ -1,38 +1,38 @@
-import './App.css'
-import {Canvas} from "@react-three/fiber";
+import './App.css';
+import { Canvas } from "@react-three/fiber";
 import Blog from "./Blog.tsx";
-import {useState} from "react";
+import { useState } from "react";
 import Model from "./Model.tsx";
+import Profile from "./Profile.tsx";
 
 function App() {
-      const path: string = "./aston_martin_valkyrie.glb";
+    const path = "./aston_martin_valkyrie.glb";
+    const [value, setValue] = useState([0.2, 0, 0]);
 
-
-
-    const [value, setValue] = useState([0, 0.3, 0])
-
-
-
-    function updateSliderValue(v){
-        setValue([0, v, 0]);
+    function updateSliderValue(v) {
+        setValue([0.2, parseFloat(v), 0]);
     }
-  return (
-    <>
-        <Blog></Blog>
-        <input type={"range"} id={'slider'} min="-6.3" max="6.3" value="0" onChange={(event) => updateSliderValue(event.target.value)}/>
-        <div style={{ height: '100vh' }}>
-            <Canvas>
-                <Model value={value} path={path}/>
-            </Canvas>
-        </div>
-    </>
-  )
+
+    return (
+        <>
+            <Blog></Blog>
+            <div id="canvas-div">
+                <Canvas>
+                    <Model value={value} path={path}/>
+                </Canvas>
+                <input
+                    type="range"
+                    id="slider"
+                    min="-3.15"
+                    max="3.15"
+                    value={value[1]}
+                    step="0.1"
+                    onChange={(event) => updateSliderValue(event.target.value)}
+                />
+            </div>
+            <Profile></Profile>
+        </>
+    );
 }
-
-
-
-
-
-
 
 export default App;

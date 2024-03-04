@@ -2,7 +2,7 @@ import {useAnimations, useGLTF} from "@react-three/drei";
 import {useEffect, useRef} from "react";
 
 export default function Model( {value, path}: {value:number[], path: string} ){
-    const actionRef = useRef(); // To store the current playing action for cleanup
+    const actionRef = useRef();
     const gltf = useGLTF(path);
     const { animations } = gltf;
     const { ref, actions } = useAnimations(animations);
@@ -28,7 +28,7 @@ export default function Model( {value, path}: {value:number[], path: string} ){
         };
     }, [actions, animations.length]);
     return <><ambientLight intensity={8} />
-    <spotLight position={[0, 0, 0]} angle={0.1} />
+    <spotLight position={[0, 0, 0]} angle={0} />
     <primitive ref={ref} object={gltf.scene} scale={30} position={[0, 0, -5]} rotation={value} />
 </>;
 }
